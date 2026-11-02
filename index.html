@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#170b10">
+  <meta name="description" content="Môn Beauty & Care — perfumaria e cuidados para realçar a sua beleza.">
+  <title>Môn Beauty & Care | Seu universo de beleza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#190d12; --wine:#3b1424; --wine2:#5c2038; --gold:#d8b477;
+      --cream:#f7f0e9; --muted:#bcaeaa; --white:#fffaf6;
+      --serif:"Playfair Display", Georgia, serif; --sans:"DM Sans", Arial, sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--ink);color:var(--white);font-family:var(--sans);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .announcement{background:#281019;color:#e9d5b7;text-align:center;padding:9px 16px;font-size:.75rem;letter-spacing:.13em;text-transform:uppercase}
+    header{position:sticky;top:0;z-index:20;background:rgba(25,13,18,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(216,180,119,.15)}
+    .nav{max-width:1180px;margin:auto;padding:17px 26px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:var(--serif);font-size:1.45rem}
+    .brand-name{font-family:var(--serif);font-size:1.12rem;letter-spacing:.12em;line-height:1.15}
+    .brand-name small{display:block;font:500 .52rem var(--sans);letter-spacing:.27em;color:var(--gold);margin-top:4px}
+    .nav-links{display:flex;align-items:center;gap:30px;color:#e6d9d4;font-size:.88rem}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--gold);padding:12px 19px;color:var(--ink);background:var(--gold);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:.25s}
+    .nav-cta:hover,.button:hover{background:transparent;color:var(--gold)}
+    .menu-toggle{display:none;background:none;border:1px solid #71505b;color:white;padding:8px 11px}
+    .hero{min-height:650px;position:relative;overflow:hidden;display:flex;align-items:center;background:
+      radial-gradient(ellipse at 78% 48%,rgba(119,44,66,.42),transparent 37%),
+      radial-gradient(ellipse at 12% 80%,rgba(89,36,52,.28),transparent 40%),
+      linear-gradient(115deg,#170b10 0%,#29101b 55%,#160a10 100%)}
+    .hero:before{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(216,180,119,.2);border-radius:50%;right:8%;top:50%;transform:translateY(-50%);box-shadow:0 0 0 24px rgba(216,180,119,.025),0 0 0 65px rgba(216,180,119,.02)}
+    .hero:after{content:"";position:absolute;width:330px;height:440px;right:17%;top:50%;transform:translateY(-45%) rotate(8deg);border:1px solid rgba(216,180,119,.35);border-radius:48% 48% 8px 8px;background:linear-gradient(145deg,rgba(255,255,255,.12),transparent 30%),linear-gradient(180deg,rgba(132,54,78,.75),rgba(43,13,27,.95));box-shadow:inset 12px 0 25px rgba(255,255,255,.05),25px 35px 65px #090407}
+    .hero-bottle{position:absolute;z-index:1;right:25%;top:50%;transform:translateY(-40%);width:110px;height:155px;border:1px solid rgba(231,198,147,.65);border-radius:8px 8px 18px 18px;background:linear-gradient(90deg,#270d19,#6b2a40 40%,#35101f);box-shadow:inset 8px 0 12px rgba(255,255,255,.12),0 15px 30px #10060a;display:flex;align-items:center;justify-content:center;text-align:center;color:#f0d6a6;font-family:var(--serif);font-size:1.2rem;letter-spacing:.12em}
+    .hero-bottle:before{content:"";position:absolute;width:48px;height:27px;background:linear-gradient(90deg,#171015,#5d4a3c,#171015);top:-27px;border-radius:4px 4px 0 0}
+    .hero-bottle:after{content:"BEAUTY & CARE";position:absolute;top:91px;font: .38rem var(--sans);letter-spacing:.15em}
+    .hero-content{position:relative;z-index:3;max-width:1180px;width:100%;margin:auto;padding:95px 26px 110px}
+    .eyebrow{color:var(--gold);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;font-weight:600}
+    h1,h2,h3{font-family:var(--serif);font-weight:500}
+    h1{font-size:clamp(3.2rem,7vw,6.3rem);line-height:1.02;max-width:610px;margin:23px 0}
+    h1 em{font-weight:400;color:var(--gold)}
+    .hero p{max-width:430px;color:#d2c2bf;font-size:1.03rem;margin-bottom:32px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .button.outline{background:transparent;color:var(--gold)}
+    .button.outline:hover{background:var(--gold);color:var(--ink)}
+    .hero-note{margin-top:55px;color:#a99191;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase}
+    .section{padding:100px 26px}
+    .container{max-width:1180px;margin:auto}
+    .section-head{text-align:center;max-width:650px;margin:0 auto 48px}
+    .section-head h2{font-size:clamp(2.2rem,4vw,3.4rem);margin:12px 0;color:var(--white)}
+    .section-head p{color:#b9a9a6;font-size:.94rem}
+    .products{background:linear-gradient(180deg,#f7f0e9 0%,#f4e9e1 100%);color:var(--ink);position:relative}
+    .products:before{content:"";position:absolute;left:0;right:0;top:0;height:95px;background:linear-gradient(180deg,#29101b 0%,rgba(41,16,27,0) 100%);pointer-events:none}
+    .products .container{position:relative;z-index:1}
+    .products .section-head h2{color:#2b111b}
+    .products .section-head p{color:#76656a}
+    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .product-card{background:#fffaf6;border:1px solid #eaded6;transition:transform .25s,box-shadow .25s}
+    .product-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(43,17,27,.12)}
+    .product-art{height:285px;position:relative;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#8b4a51,#381725 65%,#1b0d13)}
+    .product-art.coffee{background:radial-gradient(circle at 50% 45%,#b7834c,#50301f 66%,#1d110e)}
+    .product-art.floral{background:radial-gradient(circle at 50% 45%,#a64b51,#4c1827 68%,#1d0d14)}
+    .product-art.care{background:radial-gradient(circle at 50% 45%,#bd8b8b,#70414b 65%,#2a121b)}
+    .bottle{width:105px;height:150px;border:1px solid rgba(255,226,180,.65);border-radius:8px 8px 17px 17px;background:linear-gradient(90deg,rgba(20,9,12,.8),rgba(189,117,93,.8),rgba(30,10,16,.9));box-shadow:inset 8px 0 15px rgba(255,255,255,.13),0 25px 30px rgba(0,0,0,.35);position:relative;display:grid;place-items:center;color:#f5d9aa;font:1.1rem var(--serif);letter-spacing:.1em}
+    .bottle:before{content:"";position:absolute;top:-25px;width:43px;height:25px;background:linear-gradient(90deg,#171114,#a58b69,#171114);border-radius:4px 4px 0 0}
+    .bottle:after{content:"MÔN BEAUTY";position:absolute;top:91px;font: .42rem var(--sans);letter-spacing:.12em}
+    .coffee .bottle{background:linear-gradient(90deg,#27150d,#c18a4c,#452416)}
+    .floral .bottle{background:linear-gradient(90deg,#2a0c18,#a63e50,#3c1020)}
+    .care .bottle{width:80px;height:145px;border-radius:14px 14px 8px 8px;background:linear-gradient(90deg,#7c354a,#e4a7a1,#783047)}
+    .product-info{padding:21px 22px 23px}
+    .product-info small{color:#9b7659;letter-spacing:.15em;text-transform:uppercase;font-size:.65rem}
+    .product-info h3{font-size:1.35rem;color:#2b111b;margin:5px 0}
+    .product-info p{color:#7b6c6c;font-size:.83rem;min-height:44px}
+    .product-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px solid #eee3dc}
+    .price{font-size:.8rem;color:#745a5b;font-weight:600}
+    .product-bottom a{color:#6b2941;font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .product-bottom a:hover{color:#b17a48}
+    .about{background:linear-gradient(180deg,#f4e9e1 0%,#321321 13%,#1d0c13 52%,#321321 100%);position:relative}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:75px}
+    .about-art{min-height:420px;position:relative;display:grid;place-items:center;border:1px solid rgba(216,180,119,.25);background:radial-gradient(circle,#633044,#28101b 68%);overflow:hidden}
+    .about-art:before,.about-art:after{content:"";position:absolute;border:1px solid rgba(216,180,119,.3);border-radius:50%;width:300px;height:300px}
+    .about-art:after{width:390px;height:390px}
+    .moon{font-size:7rem;color:var(--gold);font-family:var(--serif);z-index:1;text-shadow:0 0 35px rgba(216,180,119,.25)}
+    .about-copy h2{font-size:clamp(2.4rem,4vw,3.6rem);line-height:1.12;margin:15px 0 22px}
+    .about-copy p{color:#c3b2b0;margin-bottom:17px;font-size:.94rem}
+    .values{display:flex;gap:24px;flex-wrap:wrap;margin-top:28px}
+    .value{border-left:1px solid var(--gold);padding-left:13px;color:#ead9c7;font-size:.78rem;letter-spacing:.06em}
+    .value strong{display:block;color:var(--gold);font:1.2rem var(--serif);margin-bottom:3px}
+    .experience{background:linear-gradient(180deg,#321321 0%,#f7f0e9 15%,#f7f0e9 100%);color:#2b111b;position:relative}
+    .experience-row{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center}
+    .experience-item{padding:24px}
+    .experience-icon{font-size:1.6rem;color:#94613e;margin-bottom:12px}
+    .experience-item h3{font-size:1.35rem;margin-bottom:8px}
+    .experience-item p{font-size:.84rem;color:#796a69}
+    .cta{padding:85px 26px;text-align:center;background:linear-gradient(180deg,#f7f0e9 0%,#542138 20%,#1b0b12 100%)}
+    .cta h2{font-size:clamp(2.3rem,5vw,4rem);margin:13px 0}
+    .cta p{color:#c8b7b4;margin:0 auto 27px;max-width:520px}
+    footer{background:#10070b;padding:45px 26px 25px;border-top:1px solid rgba(216,180,119,.17)}
+    .footer-main{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:35px;flex-wrap:wrap;padding-bottom:32px}
+    .footer-main p{color:#a99796;font-size:.82rem;max-width:300px;margin-top:13px}
+    .footer-links{display:flex;gap:22px;flex-wrap:wrap;color:#d6c5c0;font-size:.82rem}
+    .footer-bottom{max-width:1180px;margin:auto;border-top:1px solid #38232b;padding-top:18px;color:#806f72;font-size:.72rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:800px){
+      .nav-links{display:none;position:absolute;top:75px;left:0;right:0;background:#1b0c12;padding:25px 28px;flex-direction:column;align-items:flex-start;border-bottom:1px solid #593345}
+      .nav-links.open{display:flex}.menu-toggle{display:block}.nav-cta{display:none}
+      .hero{min-height:620px}.hero:before{right:-180px;opacity:.6}.hero:after{right:-5%;opacity:.45;width:260px;height:360px}.hero-bottle{right:18%;opacity:.55}
+      .hero-content{padding-top:90px;padding-bottom:75px}.hero p{max-width:360px}
+      .product-grid{grid-template-columns:repeat(2,1fr)}
+      .about-grid{grid-template-columns:1fr;gap:38px}.about-art{min-height:300px}
+    }
+    @media(max-width:540px){
+      .announcement{font-size:.62rem;letter-spacing:.08em}
+      .nav{padding:13px 18px}.brand-name{font-size:1rem}
+      .hero{min-height:610px}.hero-content{padding:75px 20px}.hero:after{right:-90px;top:55%;opacity:.35}.hero-bottle{right:7%;top:58%;opacity:.35}
+      h1{font-size:3.45rem;max-width:390px}.hero p{font-size:.92rem;max-width:310px}
+      .section{padding:75px 18px}.product-grid{grid-template-columns:1fr;gap:17px}
+      .product-art{height:250px}.experience-row{grid-template-columns:1fr;gap:5px}
+      .experience-item{padding:18px}.cta{padding:70px 20px}
+      .footer-main{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">Um toque de cuidado, um universo de beleza ✦</div>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#inicio" aria-label="Môn Beauty & Care - início">
+        <span class="brand-mark">M</span>
+        <span class="brand-name">MÔN<small>BEAUTY & CARE</small></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a><a href="#colecao">Coleção</a><a href="#sobre">A marca</a><a href="#contato">Contato</a>
+      </div>
+      <a class="nav-cta" href="https://www.instagram.com/mon_beauty__care/" target="_blank" rel="noopener">Fale com a Môn ↗</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <div class="eyebrow">Perfumaria & cuidados</div>
+        <h1>Seu brilho.<br>Seu <em>universo.</em></h1>
+        <p>Descubra fragrâncias e produtos de cuidado escolhidos para transformar pequenos momentos em experiências especiais.</p>
+        <div class="hero-actions">
+          <a class="button" href="#colecao">Conheça a coleção</a>
+          <a class="button outline" href="https://www.instagram.com/mon_beauty__care/" target="_blank" rel="noopener">Fazer um pedido</a>
+        </div>
+        <div class="hero-note">Môn Beauty & Care · Água Branca — PB</div>
+      </div>
+      <div class="hero-bottle" aria-hidden="true">MÔN</div>
+    </section>
+
+    <section class="section products" id="colecao">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Escolhas especiais</div>
+          <h2>Encontre seu próximo favorito</h2>
+          <p>Uma seleção de perfumaria e cuidados para acompanhar você em cada ocasião.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-art"><div class="bottle">MÔN</div></div>
+            <div class="product-info"><small>Perfumaria</small><h3>Fragrâncias Môn</h3><p>Perfumes marcantes para deixar sua presença por onde passar.</p><div class="product-bottom"><span class="price">Consulte disponibilidade</span><a href="https://www.instagram.com/mon_beauty__care/" target="_blank" rel="noopener">Consultar ↗</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-art coffee"><div class="bottle">coffee</div></div>
+            <div class="product-info"><small>Perfumaria</small><h3>Coffee Seduction</h3><p>Uma fragrância envolvente para quem gosta de marcar momentos.</p><div class="product-bottom"><span class="price">Consulte disponibilidade</span><a href="https://www.instagram.com/mon_beauty__care/" target="_blank" rel="noopener">Consultar ↗</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-art floral"><div class="bottle">MÔN</div></div>
+            <div class="product-info"><small>Perfumaria</small><h3>Fragrâncias especiais</h3><p>Encontre notas e aromas que combinam com a sua personalidade.</p><div class="product-bottom"><span class="price">Consulte disponibilidade</span><a href="https://www.instagram.com/mon_beauty__care/" target="_blank" rel="noopener">Consultar ↗</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-art care"><div class="bottle">CARE</div></div>
+            <div class="product-info"><small>Cuidados</small><h3>Rotina de beleza</h3><p>Produtos para deixar seu momento de autocuidado ainda melhor.</p><div class="product-bottom"><span class="price">Consulte disponibilidade</span><a href="https://www.instagram.com/mon_beauty__care/" target="_blank" rel="noopener">Consultar ↗</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-art floral"><div class="bottle">MÔN</div></div>
+            <div class="product-info"><small>Presentes</small><h3>Para surpreender</h3><p>Uma escolha especial para presentear alguém — ou você.</p><div class="product-bottom"><span class="price">Consulte disponibilidade</span><a href="https://www.instagram.com/mon_beauty__care/" target="_blank" rel="noopener">Consultar ↗</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-art coffee"><div class="bottle">MÔN</div></div>
+            <div class="product-info"><small>Descobertas</small><h3>Novidades da loja</h3><p>Conheça os lançamentos e descubra o que chegou por aqui.</p><div class="product-bottom"><span class="price">Consulte disponibilidade</span><a href="https://www.instagram.com/mon_beauty__care/" target="_blank" rel="noopener">Consultar ↗</a></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="sobre">
+      <div class="container about-grid">
+        <div class="about-art"><div class="moon">Môn</div></div>
+        <div class="about-copy">
+          <div class="eyebrow">Mais que beleza</div>
+          <h2>Um universo feito para valorizar você.</h2>
+          <p>A Môn Beauty & Care acredita que beleza também está nos detalhes: na fragrância que combina com você, no cuidado de todos os dias e na confiança de se sentir bem.</p>
+          <p>Explore nossa seleção de perfumaria e cuidados. Será um prazer ajudar você a encontrar seu próximo favorito.</p>
+          <div class="values"><div class="value"><strong>01</strong>Seu estilo</div><div class="value"><strong>02</strong>Seu cuidado</div><div class="value"><strong>03</strong>Seu universo</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Môn Beauty & Care</div><h2>Seu momento merece atenção.</h2><p>Uma experiência simples e especial do primeiro contato à escolha do produto.</p></div>
+        <div class="experience-row">
+          <div class="experience-item"><div class="experience-icon">✧</div><h3>Escolha com carinho</h3><p>Descubra opções de perfumaria e cuidados que combinam com você.</p></div>
+          <div class="experience-item"><div class="experience-icon">☾</div><h3>Atendimento próximo</h3><p>Entre em contato para tirar dúvidas e consultar os produtos disponíveis.</p></div>
+          <div class="experience-item"><div class="experience-icon">♡</div><h3>Um cuidado a mais</h3><p>Valorize sua rotina com pequenos momentos dedicados a você.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contato">
+      <div class="eyebrow">Vamos encontrar o seu favorito?</div>
+      <h2>Seu próximo encanto<br>está aqui.</h2>
+      <p>Fale com a Môn Beauty & Care, consulte as novidades e faça seu pedido pelo Instagram.</p>
+      <a class="button" href="https://www.instagram.com/mon_beauty__care/" target="_blank" rel="noopener">Conversar pelo Instagram ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <div><a class="brand" href="#inicio"><span class="brand-mark">M</span><span class="brand-name">MÔN<small>BEAUTY & CARE</small></span></a><p>Perfumaria & cuidados. Seu brilho, seu universo.</p></div>
+      <div class="footer-links"><a href="#colecao">Coleção</a><a href="#sobre">A marca</a><a href="https://www.instagram.com/mon_beauty__care/" target="_blank" rel="noopener">Instagram ↗</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Môn Beauty & Care. Todos os direitos reservados.</span><span>Água Branca — Paraíba</span></div>
+  </footer>
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? '✕' : '☰';
+    });
+    links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }));
+  </script>
+</body>
+</html>
